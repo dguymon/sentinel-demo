@@ -1,14 +1,14 @@
 terraform {
   backend "remote" {
-    organization = "hashicorp-rachel"
+    organization = "vtdguymon"
     workspaces {
-      name = "sentinel-demo1"
+      name = "Sentinel"
     }
   }
 }
 
 provider "aws" {
-  region                  = "us-west-2"
+  region                  = "us-east-1"
   profile                 = "default"
   shared_credentials_file = "~/.aws/credentials"
 }
@@ -27,7 +27,7 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"] # Canonical
+  owners = ["925415098443"] # Canonical
 }
 
 resource "aws_instance" "web" {
